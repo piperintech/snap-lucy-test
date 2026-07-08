@@ -269,6 +269,7 @@ html,body { font-family: var(--sans); font-size: 16px; line-height: 1.55; color:
 }
 .btn-call:hover { background: #1e7a4a; transform: translateY(-1px); box-shadow: 0 12px 30px rgba(42,138,95,.45); }
 .btn-call svg { width: 18px; height: 18px; stroke: white; fill: none; stroke-width: 2; }
+.btn-primary {
   display: block; width: 100%;
   background: var(--p-royal); color: var(--p-white);
   border: none; border-radius: var(--r-pill);
@@ -1883,7 +1884,7 @@ function submitSurvey(){
     console.log('SNAP LUCY TEST SUBMISSION:', JSON.stringify(payload, null, 2));
   };
 
-  if(PA_URL === 'https://defaultcf5067efbe8e47daa8aa318f347fdb.22.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/8425cd6736fa4450876a8a700c612f98/triggers/manual/paths/invoke?api-version=1'){
+  if(PA_URL === 'YOUR_POWER_AUTOMATE_HTTP_TRIGGER_URL_HERE'){
     finish(); return;
   }
 
