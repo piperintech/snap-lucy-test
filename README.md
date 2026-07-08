@@ -1,1 +1,0 @@
-# snap-lucy-test
