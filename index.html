@@ -1888,14 +1888,28 @@ function submitSurvey(){
     finish(); return;
   }
 
-  fetch(PA_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
-  })
-  .then(() => finish())
-  .catch(err => { console.error('PA error:', err); finish(); });
+  // Send via XMLHttpRequest with no-cors fallback
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', PA_URL, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onreadystatechange = function() {
+    if(xhr.readyState === 4) { finish(); }
+  };
+  xhr.onerror = function() {
+    // If CORS blocks, try again with no-cors via fetch
+    fetch(PA_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(payload)
+    }).finally(() => finish());
+  };
+  try {
+    xhr.send(JSON.stringify(payload));
+  } catch(e) {
+    console.error('XHR error:', e);
+    finish();
+  }
 }
 
 /*
