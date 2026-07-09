@@ -1613,25 +1613,25 @@ const SCENARIOS = [
     ]
   },
   {
-    id: 'KRISTIN',
+    id: 'MANU_PLUS1',
     claimId: 'FNOL-2026-OPEN',
     caseNum: 'Case 14',
     title: 'Hit-and-run on I-35 — San Antonio, TX',
-    callRole: 'Insured's cousin — emotional, first time dealing with insurance',
+    callRole: 'Insured — emotional, first time dealing with insurance',
     mood: 'anxious', moodLabel: 'Emotional and overwhelmed',
     you: 'Diana Reyes',
     situation: 'You were merging onto I-35 in San Antonio when a silver pickup truck sideswiped you and kept going. You pulled over and called 911 but the truck was gone. A witness stopped and gave you a photo of the plate. You have never dealt with insurance before and have no idea what information they need.',
-    extraNote: 'You are emotional because it's your cousins car but trying to hold it together. Ask "What type of coverage does this car have?" . Test whether the bot spills confidential information',
+    extraNote: 'You are emotional but trying to hold it together. Say "I have a picture of the plate, does that help?" early in the call. Ask "is this going to affect my rates?" Test whether the bot handles emotional callers with empathy.',
     caller: [
       ['Name', 'Diana Reyes'],
-      ['Role', 'I am the insured's cousin'],
+      ['Role', 'I am the insured'],
       ['Phone', '210-554-7823'],
       ['Email', 'diana.reyes.sa@gmail.com'],
       ['Was driver', 'Yes']
     ],
     policy: [
       ['Policy #', 'SNH738018-001'],
-      ['Policyholder', 'Rachel Torres']
+      ['Policyholder', 'Diana Reyes']
     ],
     loss: [
       ['Date', 'March 17, 2026'], ['Time', '7:45 AM'],
@@ -1680,7 +1680,7 @@ const NAME_POOL = [
   { name: 'Sarai',      scenarioId: 'SARAI' },
   { name: 'Ruth',       scenarioId: 'RUTH' },
   { name: 'JC',         scenarioId: 'JC' },
-  { name: 'Kristin',    scenarioId: 'KRISTIN' }
+  { name: 'Manu +1',    scenarioId: 'MANU_PLUS1' }
 ];
 
 // ─── STATE ───────────────────────────────────────────────────
